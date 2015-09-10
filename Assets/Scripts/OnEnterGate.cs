@@ -6,7 +6,10 @@ namespace Assets.Scripts
     {
         void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.LogError("Entered the gate");
+            if (other.CompareTag("Puck"))
+            {
+                Debug.Log("Puck is inside!");
+            }
         }
     }
 }
