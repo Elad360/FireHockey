@@ -1,14 +1,17 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Managers;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class OnEnterGate : MonoBehaviour 
+    public class OnEnterGate : MonoBehaviour
     {
+        public int PlayerId;
+
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Puck"))
             {
-                Debug.Log("Puck is inside!");
+                GameManager.Instance.UpdateScore(PlayerId);
             }
         }
     }
